@@ -1,0 +1,16 @@
+:root {
+  --color-dark-page: #151515;
+  --color-gold: #D5966C;
+  --color-gray-100: #444;
+}
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", monospace;
+}
