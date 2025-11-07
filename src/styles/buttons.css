@@ -1,0 +1,102 @@
+.btn {
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  color: white;
+
+  font-size: 1.5rem;
+  font-family: var(--font-big-shoulders);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  position: relative;
+
+  & span {
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    padding: 1.35rem 0;
+  }
+}
+
+.figure-link {
+  max-width: 30px;
+  display: flex;
+  align-items: center;
+  padding:0 .85rem;
+  box-sizing: content-box;
+
+  & img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.block-animation {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+
+  display: grid;
+
+  transition: grid-template-columns 300ms linear;
+}
+.s, .ss, .sss {
+  transition: background-color 200ms linear;
+}
+
+/* button-primary */
+.btn-primary .block-animation {
+  grid-template-columns: 0fr 2fr .6fr;
+}
+
+.btn-primary:hover .block-animation{
+  grid-template-columns: 2fr .6fr 0fr;
+}
+
+.btn-primary .s, .btn-primary .ss {
+  background-color: var(--color-dark-page);
+}
+.btn-primary .sss{
+  background-color: var(--color-gold);
+}
+
+.btn-primary:hover .s{
+  background-color: var(--color-gold);
+}
+.btn-primary:hover .ss{
+  background-color: var(--color-dark-page);
+}
+
+/* button secondary */
+
+.btn-secondary {
+  flex-direction: row-reverse;
+
+  & .figure-link {
+    transform: rotate(180deg);
+  }
+}
+
+.btn-secondary .block-animation {
+  grid-template-columns: .6fr 2fr 0fr;
+}
+.btn-secondary:hover .block-animation{
+  grid-template-columns:  0fr .6fr 2fr;
+}
+.btn-secondary .s {
+  background-color: var(--color-gold);
+}
+.btn-secondary .ss, .btn-secondary .sss {
+  background-color: var(--color-dark-page);
+}
+
+.btn-secondary:hover .ss{
+  background-color: var(--color-dark-page);
+}
+.btn-secondary:hover .sss{
+  background-color: var(--color-gold);
+}
