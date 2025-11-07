@@ -2,6 +2,9 @@
   --color-dark-page: #151515;
   --color-gold: #D5966C;
   --color-gray-100: #444;
+
+  /* fonts */
+  --font-big-shoulders: "Big Shoulders", monospace;
 }
 
 *, *::before, *::after {
@@ -13,4 +16,115 @@
 
 body {
   font-family: "Outfit", monospace;
+}
+a {
+  text-decoration: none;
+}
+
+/* === HERO PAGE === */
+
+.container-hero {
+  width: 100%;
+}
+.container-hero > article {
+  padding: 1rem;
+}
+
+.container-hero > article h1 {
+  font-family: var(--font-big-shoulders);
+  font-size: clamp(4rem, 6vw, 6rem);
+  text-wrap: balance;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.container-hero > article p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--color-gray-100);
+  margin-top: 2rem;
+
+}
+.content-image-hero {
+  width: 100%;
+  aspect-ratio: 1.5/1;
+  overflow: hidden;
+  
+  & img {
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% -180px;
+  }
+}
+
+/* buttons */
+.btn {
+  /* border: 1px solid; */
+  display: flex;
+  width: 100%;
+  max-width: 240px;
+  color: white;
+
+  font-size: 1.5rem;
+  font-family: var(--font-big-shoulders);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  position: relative;
+
+  & span {
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    padding: 1.35rem 0;
+  }
+}
+
+.figure-link {
+  /* background-color: var(--color-gold); */
+  max-width: 30px;
+  display: flex;
+  align-items: center;
+  padding:0 .85rem;
+  box-sizing: content-box;
+
+  & img {
+    /* padding-inline: .1rem; */
+    width: 100%;
+    display: block;
+  }
+}
+
+.block-animation {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+
+  display: grid;
+  grid-template-columns: 0fr 2fr .6fr;
+  transition: all 300ms linear;
+}
+
+.btn:hover .block-animation{
+  grid-template-columns: 2fr .6fr 0fr;
+}
+
+.btn-primary .s{
+  background-color: var(--color-dark-page);
+}
+.btn-primary .ss {
+  background-color: var(--color-dark-page);
+
+}
+.btn-primary .sss{
+  background-color: var(--color-gold);
+}
+
+.btn:hover .s{
+  background-color: var(--color-gold);
+}
+.btn:hover .ss{
+  background-color: var(--color-dark-page);
 }
