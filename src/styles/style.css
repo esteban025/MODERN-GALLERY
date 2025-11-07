@@ -1,7 +1,7 @@
-/* hero page */
+/* hero page, hero-gallery, footer */
 @import "./hero-page.css";
-/* hero gallery */
 @import "./hero-gallery.css";
+@import "./footer.css";
 
 :root {
   --color-dark-page: #151515;
